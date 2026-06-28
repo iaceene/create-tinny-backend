@@ -1,6 +1,6 @@
 {
   "name": "create-tinny-backend",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Scaffold a new tinny-backend project",
   "main": "index.js",
   "bin": {
