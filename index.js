@@ -1,16 +1,20 @@
 #!/usr/bin/env node
 
-const fs = require('fs-extra');
-const path = require('path');
-const { execSync } = require('child_process');
-const prompts = require('prompts');
-const { cyan, green, bold, yellow, red, gray } = require('kolorist');
-const ora = require('ora');
+import fs from 'fs-extra';
+import path from 'node:path';
+import { execSync } from 'node:child_process';
+import prompts from 'prompts';
+import { cyan, green, bold, yellow, red, gray } from 'kolorist';
+import ora from 'ora';
+import { fileURLToPath } from 'node:url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const args = process.argv.slice(2);
 const projectName = args[0] || 'myapp';
 const targetDir = path.join(process.cwd(), projectName);
+
 
 
 if (fs.existsSync(targetDir)) {
@@ -18,9 +22,35 @@ if (fs.existsSync(targetDir)) {
   process.exit(1);
 }
 
+const header = {
+    message: `  █████     ███                                      █████                        █████                              █████
+ ░░███     ░░░                                      ░░███                        ░░███                              ░░███ 
+ ███████   ████  ████████   ████████   █████ ████    ░███████   ██████    ██████  ░███ █████  ██████  ████████    ███████ 
+░░░███░   ░░███ ░░███░░███ ░░███░░███ ░░███ ░███     ░███░░███ ░░░░░███  ███░░███ ░███░░███  ███░░███░░███░░███  ███░░███ 
+  ░███     ░███  ░███ ░███  ░███ ░███  ░███ ░███     ░███ ░███  ███████ ░███ ░░░  ░██████░  ░███████  ░███ ░███ ░███ ░███ 
+  ░███ ███ ░███  ░███ ░███  ░███ ░███  ░███ ░███     ░███ ░███ ███░░███ ░███  ███ ░███░░███ ░███░░░   ░███ ░███ ░███ ░███ 
+  ░░█████  █████ ████ █████ ████ █████ ░░███████     ████████ ░░████████░░██████  ████ █████░░██████  ████ █████░░████████
+   ░░░░░  ░░░░░ ░░░░ ░░░░░ ░░░░ ░░░░░   ░░░░░███    ░░░░░░░░   ░░░░░░░░  ░░░░░░  ░░░░ ░░░░░  ░░░░░░  ░░░░ ░░░░░  ░░░░░░░░ 
+                                        ███ ░███                                                                          
+                                       ░░██████                                                                           
+                                        ░░░░░░                                                                            `,
+    by: `d88PPPo 888   88 
+888ooo8 888ooo88 
+888   8       88 
+888PPPP PPPPPP8P 
+                  `,
+    author: `▗▖  ▗▖▗▄▖  ▗▄▄▖ ▗▄▄▖▗▄▄▄▖▗▖  ▗▖▗▄▄▄▖     ▗▄▖    ▗▖ ▗▄▖  ▗▄▄▖▗▄▄▖  ▗▄▖ ▗▖ ▗▖
+ ▝▚▞▘▐▌ ▐▌▐▌   ▐▌     █  ▐▛▚▖▐▌▐▌       ▐▌ ▐▌   ▐▌▐▌ ▐▌▐▌   ▐▌ ▐▌▐▌ ▐▌▐▌ ▐▌
+  ▐▌ ▐▛▀▜▌ ▝▀▚▖ ▝▀▚▖  █  ▐▌ ▝▜▌▐▛▀▀▘    ▐▛▀▜▌   ▐▌▐▛▀▜▌▐▌▝▜▌▐▛▀▚▖▐▌ ▐▌▐▌ ▐▌
+  ▐▌ ▐▌ ▐▌▗▄▄▞▘▗▄▄▞▘▗▄█▄▖▐▌  ▐▌▐▙▄▄▖    ▐▌ ▐▌▗▄▄▞▘▐▌ ▐▌▝▚▄▞▘▐▌ ▐▌▝▚▄▞▘▝▚▄▞▘
+                                                                           
+                                                                           
+                                                                           `
+}
+
 
 (async function main() {
-  console.log(cyan('\nWelcome to create-tinny-backend\n'));
+  console.log(cyan(`\n${header.message}\n${header.by}\n${header.author}\n`));
 
   const response = await prompts([
     {

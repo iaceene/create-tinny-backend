@@ -1,14 +1,13 @@
 {
   "name": "create-tinny-backend",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Scaffold a new tinny-backend project",
   "main": "index.js",
   "bin": {
     "create-tinny-backend": "./index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "npm test"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -22,7 +21,7 @@
   ],
   "author": "Yassine Ajagrou",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/iaceene/create-tinny-backend/issues"
   },
