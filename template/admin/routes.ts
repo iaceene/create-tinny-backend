@@ -1,11 +1,11 @@
 import * as os from "node:os";
 import * as JWT from "jsonwebtoken"
-import Server from "../core/Server.js";
+import Server from "tinny-backend";
 import type {
     AdminSessions,
     ServerReq,
     ServerRes
-} from "../core/types.js"
+} from "tinny-backend"
 
 import { type auth_t} from "./auth.js";
 

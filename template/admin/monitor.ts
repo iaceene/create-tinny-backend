@@ -1,8 +1,8 @@
-import Server from "../core/Server.js";
+import Server from "tinny-backend";
 import type {
     ServerReq,
     ServerRes
-} from "../core/types.js"
+} from "tinny-backend"
 import Authen from "./auth.js";
 import Routes from "./routes.js";
 

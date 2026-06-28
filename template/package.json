@@ -1,0 +1,48 @@
+{
+  "name": "startup-tinny-backend",
+  "version": "1.0.0",
+  "description": "Backend starter using tinny-backend framework",
+  "private": false,
+  "main": "dist/app/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app/index.js",
+    "dev": "nodemon dist/app/index.js",
+    "dev:watch": "ts-node-dev --respawn --transpile-only app/index.ts"
+  },
+  "engines": {
+    "node": ">=24.13.1",
+    "npm": ">=11.10.0"
+  },
+  "keywords": [
+    "backend",
+    "starter",
+    "tinny-backend",
+    "typescript"
+  ],
+  "author": "Yassine Ajagrou",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iaceene/startup-tinny-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iaceene/startup-tinny-backend/issues"
+  },
+  "homepage": "https://github.com/iaceene/startup-tinny-backend#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "jsonwebtoken": "^9.0.3",
+    "tinny-backend": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
+    "nodemon": "^3.1.14",
+    "ts-node-dev": "^2.0.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "types": "./dist/app/index.d.ts"
+}

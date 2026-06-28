@@ -1,20 +1,39 @@
 {
   "name": "create-tinny-backend",
   "version": "1.0.0",
-  "type": "module",
+  "description": "Scaffold a new tinny-backend project",
+  "main": "index.js",
   "bin": {
-    "create-tinny-backend": "./dist/index.js"
+    "create-tinny-backend": "./index.js"
   },
-  "files": [
-    "dist",
-    "template"
-  ],
   "scripts": {
-    "build": "tsc",
-    "prepublishOnly": "npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm test"
   },
-  "devDependencies": {
-    "@types/node": "^25.x",
-    "typescript": "^5.x"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iaceene/create-tinny-backend.git"
+  },
+  "keywords": [
+    "tinny-backend",
+    "scaffold",
+    "starter",
+    "backend"
+  ],
+  "author": "Yassine Ajagrou",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/iaceene/create-tinny-backend/issues"
+  },
+  "homepage": "https://github.com/iaceene/create-tinny-backend#readme",
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "prompts": "^2.4.2",
+    "kolorist": "^1.8.0",
+    "ora": "^8.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
